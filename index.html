@@ -170,8 +170,18 @@
                 <div class="lg:col-span-5 flex flex-col items-center justify-center">
                     <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden p-[3px] bg-gradient-to-tr from-brand-blue via-brand-purple to-brand-orange shadow-2xl">
                         <div class="w-full h-full bg-slate-900 rounded-[21px] overflow-hidden relative group">
-                            <!-- En caso de existir foto personal.jpg, cargará automáticamente. De lo contrario, muestra fallback interactivo -->
-                            <img src="foto personal.jpg" alt="Yuri Mijaíl Silva Ramos" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600'" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            
+                            <!-- 
+                              === NOTA DE CONFIGURACIÓN DE IMAGEN ===
+                              - Si tienes tu foto guardada localmente en la misma carpeta que este archivo index.html, nómbrala "foto personal.jpg".
+                              - Si prefieres usar una imagen en la nube (como en LinkedIn, Imgur o Google Drive público), puedes pegar directamente la URL en el atributo src="..." de abajo.
+                              - Actualmente cuenta con un fallback profesional de Unsplash para ingenieros en caso de que la foto local no se encuentre.
+                            -->
+                            <img src="foto personal.jpg" 
+                                 alt="Yuri Mijaíl Silva Ramos" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600'" 
+                                 class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
                                 <p class="text-slate-300 text-xs uppercase tracking-widest font-bold">Ubicación</p>
                                 <p class="text-white text-sm font-medium"><i class="fa-solid fa-location-dot text-brand-purple mr-1"></i> S. M. P. - Los Olivos, Lima, Perú</p>
