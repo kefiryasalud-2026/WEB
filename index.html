@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuri Mijaíl Silva Ramos - Web Personal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter para máxima legibilidad corporativa -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#BA13B7',
+                            orange: '#BA6913',
+                            green: '#13BA16',
+                            blue: '#1364BA',
+                            dark: '#0f172a',
+                            darklight: '#1e293b',
+                            light: '#f8fafc',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text-blue-purple {
+            background: linear-gradient(135deg, #1364BA 0%, #BA13B7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 30px -10px rgba(19, 100, 186, 0.2);
+        }
+        .custom-shadow-hover {
+            transition: all 0.3s ease;
+        }
+        .custom-shadow-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(19, 100, 186, 0.4);
+        }
+        /* Ocultar scrollbar en elementos horizontales */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 min-h-screen selection:bg-brand-blue selection:text-white overflow-x-hidden">
+
+    <!-- Navegación Premium -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue to-brand-purple flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-brand-blue/20">
+                    Y
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-white font-bold tracking-tight text-lg group-hover:text-brand-blue transition-colors">Yuri Silva Ramos</span>
+                    <span class="text-xs text-slate-400 font-medium tracking-wider uppercase">Ingeniero de Sistemas</span>
+                </div>
+            </a>
+
+            <!-- Menú Escritorio -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#perfil" class="text-sm text-slate-300 hover:text-brand-blue transition-colors font-medium">Perfil</a>
+                <a href="#experiencia" class="text-sm text-slate-300 hover:text-brand-purple transition-colors font-medium">Trayectoria</a>
+                <a href="#proyectos" class="text-sm text-slate-300 hover:text-brand-orange transition-colors font-medium">Proyectos</a>
+                <a href="#educacion" class="text-sm text-slate-300 hover:text-brand-green transition-colors font-medium">Educación</a>
+                <a href="#contacto" class="px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-blue/90 text-white text-sm font-semibold shadow-lg shadow-brand-blue/25 transition-all hover:scale-105">
+                    Contactar <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </nav>
+
+            <!-- Botón Móvil -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg hover:bg-slate-800/50 transition-colors">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark/95 border-b border-slate-800 absolute top-20 left-0 w-full px-6 py-6 space-y-4 shadow-xl">
+            <a href="#perfil" class="block text-base text-slate-300 hover:text-brand-blue font-medium transition-colors">Perfil</a>
+            <a href="#experiencia" class="block text-base text-slate-300 hover:text-brand-purple font-medium transition-colors">Trayectoria</a>
+            <a href="#proyectos" class="block text-base text-slate-300 hover:text-brand-orange font-medium transition-colors">Proyectos</a>
+            <a href="#educacion" class="block text-base text-slate-300 hover:text-brand-green font-medium transition-colors">Educación</a>
+            <a href="#contacto" class="block text-center py-3 rounded-xl bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold transition-all">
+                Contactar <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero / Perfil Principal -->
+    <section id="perfil" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <!-- Elementos de fondo abstractos -->
+        <div class="absolute top-1/4 left-1/10 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-brand-purple/10 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Columna Izquierda: Información de Yuri -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-green animate-pulse"></span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-300">Disponible para Proyectos TI</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                        Yuri Mijaíl Hans <br class="hidden sm:inline">
+                        <span class="gradient-text-blue-purple">Silva Ramos</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl font-medium text-slate-300">
+                        Ingeniero de Sistemas | Especialista en Tecnologías Educativas
+                    </p>
+                    
+                    <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Ingeniero titulado con 12 años de trayectoria liderando la administración de infraestructuras tecnológicas, automatización de portales con Python y despliegues de plataformas de aprendizaje virtual (Moodle/Chamilo) para sectores públicos y corporativos.
+                    </p>
+
+                    <!-- Datos Rápidos / Badges Informativos -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 max-w-xl mx-auto lg:mx-0">
+                        <div class="bg-slate-800/40 border border-slate-800 p-3.5 rounded-xl text-center">
+                            <span class="block text-2xl font-bold text-brand-blue">12+</span>
+                            <span class="text-xs text-slate-400 uppercase tracking-wide">Años Exp.</span>
+                        </div>
+                        <div class="bg-slate-800/40 border border-slate-800 p-3.5 rounded-xl text-center">
+                            <span class="block text-2xl font-bold text-brand-purple">200+</span>
+                            <span class="text-xs text-slate-400 uppercase tracking-wide">Egresados Cert.</span>
+                        </div>
+                        <div class="bg-slate-800/40 border border-slate-800 p-3.5 rounded-xl text-center">
+                            <span class="block text-2xl font-bold text-brand-orange">1</span>
+                            <span class="text-xs text-slate-400 uppercase tracking-wide">Premio MINSA/MED</span>
+                        </div>
+                        <div class="bg-slate-800/40 border border-slate-800 p-3.5 rounded-xl text-center">
+                            <span class="block text-2xl font-bold text-brand-green">100%</span>
+                            <span class="text-xs text-slate-400 uppercase tracking-wide">Efectividad TI</span>
+                        </div>
+                    </div>
+
+                    <!-- Botones de Acción -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-6">
+                        <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-brand-purple text-white font-semibold shadow-xl shadow-brand-blue/20 hover:shadow-brand-blue/30 transition-all hover:scale-[1.02] text-center">
+                            Trabajemos juntos
+                        </a>
+                        <button onclick="openCVModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700/80 border border-slate-700 text-slate-200 font-semibold transition-all hover:scale-[1.02] flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-pdf text-brand-orange"></i> Ver CV Completo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Foto de Perfil & Tarjeta de contacto -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden p-[3px] bg-gradient-to-tr from-brand-blue via-brand-purple to-brand-orange shadow-2xl">
+                        <div class="w-full h-full bg-slate-900 rounded-[21px] overflow-hidden relative group">
+                            <!-- En caso de existir foto personal.jpg, cargará automáticamente. De lo contrario, muestra fallback interactivo -->
+                            <img src="foto personal.jpg" alt="Yuri Mijaíl Silva Ramos" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600'" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-6">
+                                <p class="text-slate-300 text-xs uppercase tracking-widest font-bold">Ubicación</p>
+                                <p class="text-white text-sm font-medium"><i class="fa-solid fa-location-dot text-brand-purple mr-1"></i> S. M. P. - Los Olivos, Lima, Perú</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Información de Contacto Directo -->
+                    <div class="w-full max-w-sm bg-slate-800/60 border border-slate-700/50 rounded-2xl p-5 mt-6 grid grid-cols-2 gap-4">
+                        <a href="mailto:Yuri.silva@ddar.pe" class="flex items-center space-x-3 p-2 rounded-xl hover:bg-slate-700/30 transition-colors">
+                            <div class="w-9 h-9 rounded-lg bg-brand-purple/10 flex items-center justify-center text-brand-purple">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Correo</span>
+                                <span class="text-xs text-white font-medium break-all">Yuri.silva@ddar.pe</span>
+                            </div>
+                        </a>
+                        <a href="tel:+51960835892" class="flex items-center space-x-3 p-2 rounded-xl hover:bg-slate-700/30 transition-colors">
+                            <div class="w-9 h-9 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Teléfono</span>
+                                <span class="text-xs text-white font-medium">960835892</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades Técnicas / Grid Dinámico -->
+    <section class="py-12 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">Especialización & Stack Tecnológico</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-items-center">
+                <!-- Skill 1: Python -->
+                <div class="flex flex-col items-center p-4 bg-slate-800/40 rounded-2xl border border-slate-800/80 hover:border-brand-blue/40 w-full transition-all hover:-translate-y-1">
+                    <i class="fa-brands fa-python text-3xl text-brand-blue mb-2"></i>
+                    <span class="text-sm font-semibold text-slate-300">Python</span>
+                    <span class="text-[10px] text-brand-blue uppercase font-bold tracking-wider mt-1">Automatización</span>
+                </div>
+                <!-- Skill 2: PHP Yii -->
+                <div class="flex flex-col items-center p-4 bg-slate-800/40 rounded-2xl border border-slate-800/80 hover:border-brand-purple/40 w-full transition-all hover:-translate-y-1">
+                    <i class="fa-brands fa-php text-3xl text-brand-purple mb-2"></i>
+                    <span class="text-sm font-semibold text-slate-300">Yii Framework</span>
+                    <span class="text-[10px] text-brand-purple uppercase font-bold tracking-wider mt-1">Desarrollo Web</span>
+                </div>
+                <!-- Skill 3: PostgreSQL / MySQL -->
+                <div class="flex flex-col items-center p-4 bg-slate-800/40 rounded-2xl border border-slate-800/80 hover:border-brand-orange/40 w-full transition-all hover:-translate-y-1">
+                    <i class="fa-solid fa-database text-3xl text-brand-orange mb-2"></i>
+                    <span class="text-sm font-semibold text-slate-300">PostgreSQL</span>
+                    <span class="text-[10px] text-brand-orange uppercase font-bold tracking-wider mt-1">Bases de Datos</span>
+                </div>
+                <!-- Skill 4: E-learning platforms -->
+                <div class="flex flex-col items-center p-4 bg-slate-800/40 rounded-2xl border border-slate-800/80 hover:border-brand-green/40 w-full transition-all hover:-translate-y-1">
+                    <i class="fa-solid fa-graduation-cap text-3xl text-brand-green mb-2"></i>
+                    <span class="text-sm font-semibold text-slate-300">Moodle & Chamilo</span>
+                    <span class="text-[10px] text-brand-green uppercase font-bold tracking-wider mt-1">LMS Virtual</span>
+                </div>
+                <!-- Skill 5: Virtualización / Networks -->
+                <div class="flex flex-col items-center p-4 bg-slate-800/40 rounded-2xl border border-slate-800/80 hover:border-brand-blue/40 w-full transition-all hover:-translate-y-1">
+                    <i class="fa-solid fa-server text-3xl text-brand-blue mb-2"></i>
+                    <span class="text-sm font-semibold text-slate-300">VMware & HW</span>
+                    <span class="text-[10px] text-brand-blue uppercase font-bold tracking-wider mt-1">Sistemas</span>
+                </div>
+                <!-- Skill 6: Oracle DB -->
+                <div class="flex flex-col items-center p-4 bg-slate-800/40 rounded-2xl border border-slate-800/80 hover:border-brand-purple/40 w-full transition-all hover:-translate-y-1">
+                    <i class="fa-solid fa-gears text-3xl text-brand-purple mb-2"></i>
+                    <span class="text-sm font-semibold text-slate-300">Oracle SQL</span>
+                    <span class="text-[10px] text-brand-purple uppercase font-bold tracking-wider mt-1">Procedimientos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia Profesional e Indicadores de Logros (Interactive Timeline) -->
+    <section id="experiencia" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base text-brand-purple font-semibold uppercase tracking-widest">Experiencia Consolidada</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Trayectoria Profesional e Impacto Tecnológico</p>
+                <p class="text-slate-400 mt-4">Gestión eficaz de infraestructura, arquitectura de sistemas y administración de datos con resultados cuantificados.</p>
+            </div>
+
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 py-4 space-y-12">
+                
+                <!-- Hito 1: Development Data Analysis and Report (DDAR) -->
+                <div class="relative pl-8 md:pl-12">
+                    <!-- Icono flotante con fechas -->
+                    <span class="absolute -left-[17px] top-1.5 bg-brand-blue border-4 border-slate-950 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </span>
+                    <div class="absolute right-full mr-8 top-1.5 hidden md:block text-right">
+                        <span class="text-sm font-bold text-brand-blue block">2018 - Presente</span>
+                        <span class="text-xs text-slate-400">Lima, Perú</span>
+                    </div>
+
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl custom-shadow-hover">
+                        <span class="text-xs font-bold text-brand-blue uppercase md:hidden">2018 - Presente</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Jefe de Proyectos</h3>
+                        <p class="text-brand-purple font-semibold text-sm">Development Data Analysis and Report</p>
+                        
+                        <div class="mt-4 space-y-3 text-slate-400 text-sm">
+                            <p><strong>Actividades Clave:</strong> Programación robusta en PHP usando Yii Framework, modelado de maquetas y mockups interactivos junto a clientes corporativos, administración central de PostgreSQL/MySQL, y automatización avanzada en Python y macros VBA.</p>
+                        </div>
+
+                        <!-- Indicadores Numéricos / Logros -->
+                        <div class="mt-6 border-t border-slate-800/80 pt-6">
+                            <h4 class="text-xs font-bold text-slate-300 uppercase tracking-widest mb-4"><i class="fa-solid fa-bullseye text-brand-green mr-2"></i> Logros e Indicadores Clave</h4>
+                            <ol class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">1</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed"><strong class="text-brand-green">100% de éxito</strong> en el diseño de interfaces de usuario interactivas que redujeron un 40% las fricciones en las reuniones de planificación de requerimientos.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">2</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed"><strong class="text-brand-green">65% de aceleración operativa</strong> mediante la implementación y despliegue de robots autónomos en Python de raspado y transferencia de datos.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">3</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Arquitectura óptima de Bases de Datos en PostgreSQL y MySQL con redundancia que garantizó la integridad del <strong class="text-brand-green">100% de transacciones de clientes</strong>.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hito 2: Hospital Carlos Lanfranco La Hoz -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[17px] top-1.5 bg-brand-purple border-4 border-slate-950 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-hospital"></i>
+                    </span>
+                    <div class="absolute right-full mr-8 top-1.5 hidden md:block text-right">
+                        <span class="text-sm font-bold text-brand-purple block">2015 - 2017</span>
+                        <span class="text-xs text-slate-400">Lima, Perú</span>
+                    </div>
+
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl custom-shadow-hover">
+                        <span class="text-xs font-bold text-brand-purple uppercase md:hidden">2015 - 2017</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Estadístico / Administrador de Datos</h3>
+                        <p class="text-brand-purple font-semibold text-sm">Hospital Carlos Lanfranco La Hoz</p>
+                        
+                        <div class="mt-4 space-y-3 text-slate-400 text-sm">
+                            <p><strong>Actividades Clave:</strong> Formulación y automatización de reportes estadísticos de volumen hospitalario, administración del sistema HIS en FoxPro y planificación matemática del rol mensual de especialidades del hospital.</p>
+                        </div>
+
+                        <!-- Indicadores Numéricos / Logros -->
+                        <div class="mt-6 border-t border-slate-800/80 pt-6">
+                            <h4 class="text-xs font-bold text-slate-300 uppercase tracking-widest mb-4"><i class="fa-solid fa-bullseye text-brand-green mr-2"></i> Logros e Indicadores Clave</h4>
+                            <ol class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">1</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Optimización e integración total del flujo de datos sanitarios HIS con <strong class="text-brand-green">0% de retrasos</strong> en los envíos de reportes mensuales exigidos por el MINSA.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">2</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Diseño de una matriz predictiva que incrementó en un <strong class="text-brand-green">25% la eficiencia de atenciones</strong> en consultorios críticos con sobrecarga de pacientes.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hito 3: Perudata Recovery SAC -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[17px] top-1.5 bg-brand-orange border-4 border-slate-950 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-microchip"></i>
+                    </span>
+                    <div class="absolute right-full mr-8 top-1.5 hidden md:block text-right">
+                        <span class="text-sm font-bold text-brand-orange block">2014 - Presente</span>
+                        <span class="text-xs text-slate-400">Lima, Perú</span>
+                    </div>
+
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl custom-shadow-hover">
+                        <span class="text-xs font-bold text-brand-orange uppercase md:hidden">2014 - Presente</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Ingeniero de Sistemas</h3>
+                        <p class="text-brand-purple font-semibold text-sm">Perudata Recovery SAC</p>
+                        
+                        <div class="mt-4 space-y-3 text-slate-400 text-sm">
+                            <p><strong>Actividades Clave:</strong> Ingeniería inversa y recuperación forense de datos en discos mecánicos, SAS, SCSI y servidores con arreglos RAID complejos. Administración corporativa de sistemas de redes físicas y virtuales.</p>
+                        </div>
+
+                        <!-- Indicadores Numéricos / Logros -->
+                        <div class="mt-6 border-t border-slate-800/80 pt-6">
+                            <h4 class="text-xs font-bold text-slate-300 uppercase tracking-widest mb-4"><i class="fa-solid fa-bullseye text-brand-green mr-2"></i> Logros e Indicadores Clave</h4>
+                            <ol class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">1</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Éxito en la recuperación de información crítica empresarial en más de <strong class="text-brand-green">150 incidentes de fallas de arreglos RAID</strong> multimarca.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">2</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Aumento de leads de servicios de alta especialización mediante el diseño y desarrollo dinámico de su <strong class="text-brand-green">nueva plataforma web oficial</strong>.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hito 4: Zona VIP Agencia BTL -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[17px] top-1.5 bg-brand-green border-4 border-slate-950 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </span>
+                    <div class="absolute right-full mr-8 top-1.5 hidden md:block text-right">
+                        <span class="text-sm font-bold text-brand-green block">2013 - 2014</span>
+                        <span class="text-xs text-slate-400">San Luis, Perú</span>
+                    </div>
+
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl custom-shadow-hover">
+                        <span class="text-xs font-bold text-brand-green uppercase md:hidden">2013 - 2014</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Jefe de Sistemas</h3>
+                        <p class="text-brand-purple font-semibold text-sm">Zona VIP Agencia BTL</p>
+                        
+                        <div class="mt-4 space-y-3 text-slate-400 text-sm">
+                            <p><strong>Actividades Clave:</strong> Mantenimiento y optimización del core ERP Octopus, administración del sistema biométrico ZKSoftware de asistencia, supervisión de servidores HP ProLiant, configuración de almacenamientos de datos LaCie y soporte preventivo a terminales de diseño (macOS y Windows).</p>
+                        </div>
+
+                        <!-- Indicadores Numéricos / Logros -->
+                        <div class="mt-6 border-t border-slate-800/80 pt-6">
+                            <h4 class="text-xs font-bold text-slate-300 uppercase tracking-widest mb-4"><i class="fa-solid fa-bullseye text-brand-green mr-2"></i> Logros e Indicadores Clave</h4>
+                            <ol class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">1</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Implementación del software centralizado de Help Desk para la integración de <strong class="text-brand-green">todas las sucursales a nivel nacional</strong>.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">2</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Configuración de un entorno VMware virtualizado que integró un firewall dinámico y el ERP empresarial con <strong class="text-brand-green">99.9% de uptime</strong>.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">3</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Disminución del <strong class="text-brand-green">100% de la vulnerabilidad</strong> de datos de diseño mediante backups automatizados y periódicos mediante FBackup.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hito 5: Ministerio de Educación - CEBA Ventanilla -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[17px] top-1.5 bg-brand-blue border-4 border-slate-950 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+                    <div class="absolute right-full mr-8 top-1.5 hidden md:block text-right">
+                        <span class="text-sm font-bold text-brand-blue block">2012</span>
+                        <span class="text-xs text-slate-400">Callao, Perú</span>
+                    </div>
+
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl custom-shadow-hover">
+                        <span class="text-xs font-bold text-brand-blue uppercase md:hidden">2012</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Administrador de Red y Aula Virtual</h3>
+                        <p class="text-brand-purple font-semibold text-sm">Ministerio de Educación - CEBA PAEBA Ventanilla</p>
+                        
+                        <div class="mt-4 space-y-3 text-slate-400 text-sm">
+                            <p><strong>Actividades Clave:</strong> Planteamiento, planeación e instalación de plataformas de aprendizaje a distancia Moodle, control y soporte técnico del data center educativo.</p>
+                        </div>
+
+                        <!-- Indicadores Numéricos / Logros -->
+                        <div class="mt-6 border-t border-slate-800/80 pt-6">
+                            <h4 class="text-xs font-bold text-slate-300 uppercase tracking-widest mb-4"><i class="fa-solid fa-bullseye text-brand-green mr-2"></i> Logros e Indicadores Clave</h4>
+                            <ol class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">1</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Graduación y entrega de certificados digitales a más de <strong class="text-brand-green">200 participantes</strong> en un esfuerzo internacional conjunto con la Cooperación Española.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">2</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Capacitación exitosa en TIC al <strong class="text-brand-green">100% de la plantilla docente</strong> y estudiantil de la sede.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hito 6: IPEC Ventanilla & UGEL Ventanilla -->
+                <div class="relative pl-8 md:pl-12">
+                    <span class="absolute -left-[17px] top-1.5 bg-brand-purple border-4 border-slate-950 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-university"></i>
+                    </span>
+                    <div class="absolute right-full mr-8 top-1.5 hidden md:block text-right">
+                        <span class="text-sm font-bold text-brand-purple block">2008 - 2012</span>
+                        <span class="text-xs text-slate-400">Callao, Perú</span>
+                    </div>
+
+                    <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl custom-shadow-hover">
+                        <span class="text-xs font-bold text-brand-purple uppercase md:hidden">2008 - 2012</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Procesador de Información / Administrador</h3>
+                        <p class="text-brand-purple font-semibold text-sm">IPEC & UGEL Ventanilla</p>
+                        
+                        <div class="mt-4 space-y-3 text-slate-400 text-sm">
+                            <p><strong>Actividades Clave:</strong> Administración de bases de datos gubernamentales como "SIGMA" (MINEDU), despliegue de base de datos Oracle, desarrollo del sistema web de control de matrícula en Chamilo y planes de continuidad TI.</p>
+                        </div>
+
+                        <!-- Indicadores Numéricos / Logros -->
+                        <div class="mt-6 border-t border-slate-800/80 pt-6">
+                            <h4 class="text-xs font-bold text-slate-300 uppercase tracking-widest mb-4"><i class="fa-solid fa-bullseye text-brand-green mr-2"></i> Logros e Indicadores Clave</h4>
+                            <ol class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">1</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Obtención de <strong class="text-brand-green">1 Reconocimiento de Honor</strong> de parte del Ministerio de Educación por el excelente desempeño técnico en la migración y reestructuración de la base de datos nacional.</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-6 h-6 rounded-lg bg-brand-green/10 flex items-center justify-center text-brand-green text-xs font-bold mr-3 mt-0.5 shrink-0">2</span>
+                                    <p class="text-slate-300 text-sm leading-relaxed">Desarrollo interno del <strong class="text-brand-green">sistema web de automatización de matrículas</strong> que redujo en un 70% los tiempos de espera presenciales de los tutores.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Desarrollados con Filtros Dinámicos -->
+    <section id="proyectos" class="py-24 bg-slate-900/30 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base text-brand-orange font-semibold uppercase tracking-widest">Portafolio Integrado</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Sistemas y Soluciones Desplegadas</p>
+                <p class="text-slate-400 mt-4">Casos de éxito reales que abordan problemas reales de automatización y escalabilidad.</p>
+                
+                <!-- Filtros Interactivos -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8">
+                    <button onclick="filterProjects('all')" class="project-tab active px-5 py-2 rounded-xl bg-brand-orange text-white text-sm font-semibold transition-all hover:scale-105 shadow-md">Todos</button>
+                    <button onclick="filterProjects('web')" class="project-tab px-5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-sm font-semibold transition-all hover:scale-105">Desarrollo Web</button>
+                    <button onclick="filterProjects('bot')" class="project-tab px-5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-sm font-semibold transition-all hover:scale-105">Automatización & Bots</button>
+                    <button onclick="filterProjects('edu')" class="project-tab px-5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-sm font-semibold transition-all hover:scale-105">E-Learning</button>
+                    <button onclick="filterProjects('db')" class="project-tab px-5 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-sm font-semibold transition-all hover:scale-105">Bases de Datos</button>
+                </div>
+            </div>
+
+            <!-- Grilla de Proyectos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Proyecto 1: Portal de Clientes DDAR -->
+                <div class="project-card bg-slate-850 bg-slate-800/40 border border-slate-800/80 rounded-2xl p-6 custom-shadow-hover flex flex-col justify-between" data-category="web">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                                <i class="fa-solid fa-code text-xl"></i>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-brand-blue/10 text-brand-blue px-2.5 py-1 rounded-full">Yii Framework</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Plataforma de Clientes Web (DDAR)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Arquitectura de interfaz interactiva con maquetaciones Mockup previas que optimizan la gestión de requerimientos y flujos operativos entre el cliente y el equipo de analistas.</p>
+                    </div>
+                    <div class="border-t border-slate-800/60 pt-4 mt-4 flex justify-between items-center text-xs text-slate-400 font-semibold">
+                        <span>Front-End & Back-End</span>
+                        <span class="text-brand-blue"><i class="fa-solid fa-check-double mr-1"></i> Producción</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Bots de Scraping y Automatización Python -->
+                <div class="project-card bg-slate-850 bg-slate-800/40 border border-slate-800/80 rounded-2xl p-6 custom-shadow-hover flex flex-col justify-between" data-category="bot">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-purple/10 flex items-center justify-center text-brand-purple">
+                                <i class="fa-solid fa-robot text-xl"></i>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-brand-purple/10 text-brand-purple px-2.5 py-1 rounded-full">Python (Bots)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Automatización de Procesos con Bots</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Automatización en Python para la sincronización periódica de portales gubernamentales y portales de clientes, disminuyendo hasta en un 65% la digitación repetitiva de información.</p>
+                    </div>
+                    <div class="border-t border-slate-800/60 pt-4 mt-4 flex justify-between items-center text-xs text-slate-400 font-semibold">
+                        <span>Python Scripts / Selenium</span>
+                        <span class="text-brand-purple"><i class="fa-solid fa-clock mr-1"></i> Automatizado</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Aula Virtual Moodle CEBA -->
+                <div class="project-card bg-slate-850 bg-slate-800/40 border border-slate-800/80 rounded-2xl p-6 custom-shadow-hover flex flex-col justify-between" data-category="edu">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green">
+                                <i class="fa-solid fa-graduation-cap text-xl"></i>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-brand-green/10 text-brand-green px-2.5 py-1 rounded-full">Moodle LMS</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Infraestructura Aula Virtual Moodle</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Despliegue integral de la plataforma de e-learning Moodle en el CEBA PAEBA Ventanilla. Sistema capacitado para alojar material interactivo, exámenes y automatización de entrega de certificados.</p>
+                    </div>
+                    <div class="border-t border-slate-800/60 pt-4 mt-4 flex justify-between items-center text-xs text-slate-400 font-semibold">
+                        <span>Moodle / Linux Centos</span>
+                        <span class="text-brand-green"><i class="fa-solid fa-users mr-1"></i> 200+ Alumnos</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: Sistema de Control de Matrícula Chamilo -->
+                <div class="project-card bg-slate-850 bg-slate-800/40 border border-slate-800/80 rounded-2xl p-6 custom-shadow-hover flex flex-col justify-between" data-category="edu">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center text-brand-green">
+                                <i class="fa-solid fa-school text-xl"></i>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-brand-green/10 text-brand-green px-2.5 py-1 rounded-full">Chamilo / PHP</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Control de Matrícula e Historial Académico</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Solución a la medida en Chamilo para el control integral de la matrícula académica presencial y remota en el Instituto IPEC, disminuyendo colas de inscripción en un 70%.</p>
+                    </div>
+                    <div class="border-t border-slate-800/60 pt-4 mt-4 flex justify-between items-center text-xs text-slate-400 font-semibold">
+                        <span>Chamilo CMS / MySQL</span>
+                        <span class="text-brand-green"><i class="fa-solid fa-check-circle mr-1"></i> Activo</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5: Migración de Base de Datos Oracle UGEL -->
+                <div class="project-card bg-slate-850 bg-slate-800/40 border border-slate-800/80 rounded-2xl p-6 custom-shadow-hover flex flex-col justify-between" data-category="db">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange">
+                                <i class="fa-solid fa-database text-xl"></i>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-brand-orange/10 text-brand-orange px-2.5 py-1 rounded-full">Oracle / DB</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Optimización de Base de Datos Sigma</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Planificación física y migración segura de datos en la plataforma educativa en línea para UGEL Ventanilla. Reconocido por el MINEDU por el excelente rendimiento de consultas SQL.</p>
+                    </div>
+                    <div class="border-t border-slate-800/60 pt-4 mt-4 flex justify-between items-center text-xs text-slate-400 font-semibold">
+                        <span>Oracle 11g R2 / PL/SQL</span>
+                        <span class="text-brand-orange"><i class="fa-solid fa-award mr-1"></i> Certificado</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6: Recuperación Forense de Información -->
+                <div class="project-card bg-slate-850 bg-slate-800/40 border border-slate-800/80 rounded-2xl p-6 custom-shadow-hover flex flex-col justify-between" data-category="db">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider bg-brand-blue/10 text-brand-blue px-2.5 py-1 rounded-full">Sistemas RAID</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Ingeniería Forense en Almacenamiento</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Protocolos estrictos de recuperación forense de datos para servidores HP ProLiant, almacenamiento LaCie y reconstrucción lógica de arreglos de discos RAID bajo fallas físicas.</p>
+                    </div>
+                    <div class="border-t border-slate-800/60 pt-4 mt-4 flex justify-between items-center text-xs text-slate-400 font-semibold">
+                        <span>HW / SAS / SCSI / IDE</span>
+                        <span class="text-brand-blue"><i class="fa-solid fa-circle-play mr-1"></i> Crítico</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Educación y Capacitaciones -->
+    <section id="educacion" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base text-brand-green font-semibold uppercase tracking-widest">Formación de Primer Nivel</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Educación Superior y Certificaciones</p>
+                <p class="text-slate-400 mt-4">Sólido trasfondo académico universitario, posgrado y certificaciones industriales que respaldan mis soluciones técnicas.</p>
+            </div>
+
+            <!-- Grid de Educación -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Maestría -->
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl relative overflow-hidden group hover:border-brand-blue/40 transition-colors">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-brand-blue"></div>
+                    <i class="fa-solid fa-graduation-cap text-3xl text-brand-blue mb-4"></i>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Maestría</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Tecnología Educativa</h3>
+                    <p class="text-slate-400 text-sm mb-4">Universidad Privada "César Vallejo" (Estudiante activo de Posgrado - Lima Norte).</p>
+                    <div class="inline-flex items-center text-xs text-brand-blue font-semibold uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-blue mr-2 animate-pulse"></span> Especialización E-learning
+                    </div>
+                </div>
+
+                <!-- Ingeniería -->
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl relative overflow-hidden group hover:border-brand-purple/40 transition-colors">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-brand-purple"></div>
+                    <i class="fa-solid fa-user-tie text-3xl text-brand-purple mb-4"></i>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Título Profesional</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Ingeniería de Sistemas</h3>
+                    <p class="text-slate-400 text-sm mb-4">Universidad Privada "Telesup" (Grado Titulado colegiado en ejercicio legal).</p>
+                    <div class="inline-flex items-center text-xs text-brand-purple font-semibold uppercase">
+                        <i class="fa-solid fa-stamp mr-2 text-brand-purple"></i> Colegiatura Hábil
+                    </div>
+                </div>
+
+                <!-- Licenciatura -->
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl relative overflow-hidden group hover:border-brand-orange/40 transition-colors">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-brand-orange"></div>
+                    <i class="fa-solid fa-calculator text-3xl text-brand-orange mb-4"></i>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Segunda Titulación</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Matemáticas, Física e Informática</h3>
+                    <p class="text-slate-400 text-sm mb-4">Universidad Nacional "José Faustino Sánchez Carrión" (Grado Titulado - Ciencias).</p>
+                    <div class="inline-flex items-center text-xs text-brand-orange font-semibold uppercase">
+                        <i class="fa-solid fa-file-invoice mr-2 text-brand-orange"></i> Base Científica Sólida
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificaciones e Idiomas -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-8">
+                <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-award text-brand-green"></i> Diplomados, Seminarios y Certificaciones Adicionales
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm text-slate-300">
+                    <div class="flex items-start space-x-3 bg-slate-800/30 p-4 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+                        <i class="fa-solid fa-circle-check text-brand-green mt-1 shrink-0"></i>
+                        <div>
+                            <p class="font-semibold text-white">Certificado Oracle Database 11g R2</p>
+                            <p class="text-xs text-slate-400">Tecsup - Administración Base Datos</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-800/30 p-4 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+                        <i class="fa-solid fa-circle-check text-brand-green mt-1 shrink-0"></i>
+                        <div>
+                            <p class="font-semibold text-white">Administrador Virtual Aula Mentor</p>
+                            <p class="text-xs text-slate-400">Ministerio de Educación de España</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-800/30 p-4 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+                        <i class="fa-solid fa-circle-check text-brand-green mt-1 shrink-0"></i>
+                        <div>
+                            <p class="font-semibold text-white">Diplomado en Nuevas NTIC</p>
+                            <p class="text-xs text-slate-400">Especialización de Postgrado</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-800/30 p-4 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+                        <i class="fa-solid fa-circle-check text-brand-green mt-1 shrink-0"></i>
+                        <div>
+                            <p class="font-semibold text-white">Ciclo de Idiomas Intermedio</p>
+                            <p class="text-xs text-slate-400">Centro de Idiomas Instituto Privado SISE</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-800/30 p-4 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+                        <i class="fa-solid fa-circle-check text-brand-green mt-1 shrink-0"></i>
+                        <div>
+                            <p class="font-semibold text-white">Conferencia WEB 2.0</p>
+                            <p class="text-xs text-slate-400">Fundación Telefónica</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-800/30 p-4 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
+                        <i class="fa-solid fa-circle-check text-brand-green mt-1 shrink-0"></i>
+                        <div>
+                            <p class="font-semibold text-white">Administración de LMS Virtuales</p>
+                            <p class="text-xs text-slate-400">EDUCALLAO - Certificación Regional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto / Footer -->
+    <section id="contacto" class="py-24 bg-slate-900/60 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Columna Izquierda: Mensaje y Datos -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-base text-brand-blue font-semibold uppercase tracking-widest">¿Tienes un proyecto TI?</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Pongámonos en Contacto hoy mismo</p>
+                    <p class="text-slate-400 text-base leading-relaxed">
+                        Estoy listo para aportar mis 12 años de experiencia como Jefe de Proyectos y Especialista en Automatización / Bases de datos. Envíame un mensaje directo para coordinar una entrevista técnica o consultoría TI.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-blue">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[11px] text-slate-400 uppercase tracking-widest font-semibold">Ubicación Actual</span>
+                                <span class="text-sm text-slate-200">Los Olivos / San Martín de Porres, Lima, Perú.</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-purple">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[11px] text-slate-400 uppercase tracking-widest font-semibold">Correo Electrónico</span>
+                                <a href="mailto:Yuri.silva@ddar.pe" class="text-sm text-brand-purple hover:underline">Yuri.silva@ddar.pe</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-brand-green">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[11px] text-slate-400 uppercase tracking-widest font-semibold">Móvil Personal</span>
+                                <a href="tel:+51960835892" class="text-sm text-slate-200 hover:text-white font-medium">960835892</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Formulario Interactivo -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-950/60 border border-slate-800 p-8 rounded-3xl custom-shadow">
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Nombre Completo</label>
+                                    <input type="text" id="name" required class="w-full bg-slate-900 border border-slate-800 hover:border-slate-700 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue rounded-xl px-4 py-3.5 text-white text-sm outline-none transition-all" placeholder="Juan Pérez">
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Empresa / Institución</label>
+                                    <input type="text" id="company" class="w-full bg-slate-900 border border-slate-800 hover:border-slate-700 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue rounded-xl px-4 py-3.5 text-white text-sm outline-none transition-all" placeholder="Mi Empresa S.A.C.">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Correo Electrónico</label>
+                                    <input type="email" id="email" required class="w-full bg-slate-900 border border-slate-800 hover:border-slate-700 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue rounded-xl px-4 py-3.5 text-white text-sm outline-none transition-all" placeholder="correo@empresa.com">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Teléfono de Contacto</label>
+                                    <input type="tel" id="phone" class="w-full bg-slate-900 border border-slate-800 hover:border-slate-700 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue rounded-xl px-4 py-3.5 text-white text-sm outline-none transition-all" placeholder="+51 999 999 999">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Mensaje o Requerimiento</label>
+                                <textarea id="message" rows="4" required class="w-full bg-slate-900 border border-slate-800 hover:border-slate-700 focus:border-brand-blue focus:ring-1 focus:ring-brand-blue rounded-xl px-4 py-3.5 text-white text-sm outline-none transition-all resize-none" placeholder="Hola Yuri, nos interesa tu perfil para un proyecto de automatización con Python..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-brand-blue hover:bg-brand-blue/90 text-white font-bold text-sm tracking-wide shadow-lg shadow-brand-blue/25 transition-all flex items-center justify-center gap-2 hover:scale-[1.01]">
+                                Enviar Mensaje <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Legal -->
+            <div class="border-t border-slate-800/80 mt-20 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+                <p>&copy; 2026 Yuri Mijaíl Hans Silva Ramos. Todos los derechos reservados.</p>
+                <div class="flex space-x-6">
+                    <span class="hover:text-slate-200 transition-colors cursor-pointer"><i class="fa-solid fa-code text-brand-blue mr-1"></i> Diseñado bajo estándares web premium</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Vista Rápida del CV Completo (No usa alertas del navegador) -->
+    <div id="cv-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-brand-darklight border border-slate-800 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto custom-shadow flex flex-col">
+            <!-- Header Modal -->
+            <div class="p-6 border-b border-slate-800 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange">
+                        <i class="fa-solid fa-file-invoice text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold">Curriculum Vitae</h3>
+                        <p class="text-[11px] text-slate-400">Yuri Mijaíl Hans Silva Ramos - Ingeniero de Sistemas</p>
+                    </div>
+                </div>
+                <button onclick="closeCVModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Content Modal -->
+            <div class="p-6 space-y-6 text-sm leading-relaxed text-slate-300">
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-brand-blue mb-2">Resumen Ejecutivo</h4>
+                    <p>Ingeniero de Sistemas titulado con más de 12 años de trayectoria progresiva en el sector. Experto en liderazgo de áreas de sistemas, desarrollo con PHP (Yii Framework) y automatización con Python. Sólidos conocimientos en optimización de Bases de Datos Oracle y PostgreSQL, así como dirección de aulas virtuales institucionales.</p>
+                </div>
+
+                <div class="border-t border-slate-800/60 pt-4">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-brand-purple mb-2">Referencias Profesionales</h4>
+                    <ul class="space-y-3">
+                        <li class="bg-slate-900/40 p-3 rounded-xl border border-slate-800">
+                            <p class="font-bold text-white">Ing. Grovert Leon Osorio</p>
+                            <p class="text-xs text-slate-400">Gerente General - Peru Data Recovery</p>
+                            <p class="text-xs text-brand-blue mt-1">Celular: 958039107 / 4242921</p>
+                        </li>
+                        <li class="bg-slate-900/40 p-3 rounded-xl border border-slate-800">
+                            <p class="font-bold text-white">Lic. Ines Malpartida</p>
+                            <p class="text-xs text-slate-400">Jefa de Recursos Humanos - Zona Vip Agencia BTL</p>
+                            <p class="text-xs text-brand-blue mt-1">Celular: 986795772</p>
+                        </li>
+                        <li class="bg-slate-900/40 p-3 rounded-xl border border-slate-800">
+                            <p class="font-bold text-white">Mg. Luis Eloy Olano Soriano</p>
+                            <p class="text-xs text-slate-400">Director General del IPEC - Ventanilla</p>
+                            <p class="text-xs text-brand-blue mt-1">Celular: 999315452 / 993545979</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Modal -->
+            <div class="p-6 border-t border-slate-800 flex justify-end gap-3 bg-slate-900/20">
+                <button onclick="closeCVModal()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors">
+                    Cerrar Vista
+                </button>
+                <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold text-xs transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-print"></i> Imprimir Portafolio
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificaciones flotantes tipo Toast (Para evitar alert predeterminado) -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+    <!-- Script de Control Interactivo -->
+    <script>
+        // Menu Móvil Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer click en un link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Filtrado Dinámico de Proyectos
+        function filterProjects(category) {
+            // Actualizar clase del botón seleccionado
+            const tabs = document.querySelectorAll('.project-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-brand-orange', 'text-white', 'active');
+                tab.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            // Encontrar el botón activo
+            const activeEvent = event.currentTarget;
+            activeEvent.classList.remove('bg-slate-800', 'text-slate-300');
+            activeEvent.classList.add('bg-brand-orange', 'text-white', 'active');
+
+            // Filtrar cards de proyectos
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'flex';
+                    // Pequeño delay de animación
+                    card.classList.add('scale-100');
+                    card.classList.remove('scale-95', 'opacity-50');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Control del Modal de CV
+        function openCVModal() {
+            document.getElementById('cv-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCVModal() {
+            document.getElementById('cv-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cierre de modal al dar click fuera del contenedor
+        window.onclick = function(event) {
+            const modal = document.getElementById('cv-modal');
+            if (event.target === modal) {
+                closeCVModal();
+            }
+        }
+
+        // Generador de Alertas Toast Personalizadas
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            
+            const toast = document.createElement('div');
+            toast.className = `flex items-start gap-3 bg-slate-900 border ${type === 'success' ? 'border-brand-green' : 'border-brand-purple'} p-4 rounded-2xl shadow-2xl transition-all duration-300 translate-y-5 opacity-0 max-w-sm w-full`;
+            
+            const icon = type === 'success' 
+                ? '<i class="fa-solid fa-circle-check text-brand-green text-lg"></i>' 
+                : '<i class="fa-solid fa-circle-exclamation text-brand-purple text-lg"></i>';
+
+            toast.innerHTML = `
+                <div class="shrink-0">${icon}</div>
+                <div class="flex-1">
+                    <p class="text-white text-xs font-bold font-sans">${title}</p>
+                    <p class="text-slate-400 text-[11px] mt-0.5">${message}</p>
+                </div>
+            `;
+
+            container.appendChild(toast);
+
+            // Forzar reflow para animación
+            setTimeout(() => {
+                toast.classList.remove('translate-y-5', 'opacity-0');
+            }, 10);
+
+            // Quitar toast después de 4 segundos
+            setTimeout(() => {
+                toast.classList.add('translate-y-5', 'opacity-0');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 4000);
+        }
+
+        // Envío de Formulario Interactivo
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            
+            // Simular respuesta exitosa sin recargar la página
+            showToast(
+                `¡Hola, ${name}!`,
+                `Hemos recibido tu solicitud de contacto para ${company || 'tu proyecto'}. Yuri se comunicará contigo pronto.`,
+                'success'
+            );
+
+            // Limpiar formulario
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+</body>
+</html>
